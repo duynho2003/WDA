@@ -57,5 +57,25 @@ namespace Lab02.Controllers
             }
             return View();
         }
+
+        public IActionResult Delete(string code)
+        {
+            try
+            {
+                var student = db.Student.SingleOrDefault(s => s.code.Equals(code));
+                if (student != null)
+                {
+                    db.Student.Remove(student);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Msg = ex.Message;
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

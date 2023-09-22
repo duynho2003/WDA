@@ -14,6 +14,7 @@
             <th>StudentName</th>
             <th>Address</th>
             <th>PhoneNumber</th>
+            <th>Action</th>
         </tr>
         @foreach (var item in Model)
         {
@@ -22,6 +23,9 @@
                 <td>@item.name</td>
                 <td>@item.address</td>
                 <td>@item.phone</td>
+                <td>
+                    @Html.ActionLink("Delete","Delete","Student", new{code=item.code})
+                </td>
             </tr>
         }
     </table>

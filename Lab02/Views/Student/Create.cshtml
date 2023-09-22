@@ -11,22 +11,25 @@
 <div>
     <form asp-action="Create" method="post">
         <div>
-            @Html.DisplayNameFor(model=>model.code)
+            @*@Html.DisplayNameFor(model=>model.code)*@
+            <label>Enter code:</label>
             @Html.EditorFor(model=>model.code)
             @Html.ValidationMessageFor(model=>model.code)
         </div><br />
         <div>
-            @Html.DisplayNameFor(model=>model.name)
+            @*@Html.DisplayNameFor(model=>model.name)*@
+            <label>Enter name:</label>
             @Html.EditorFor(model=>model.name)
             @Html.ValidationMessageFor(model=>model.name)
         </div><br />
         <div>
-            @Html.DisplayNameFor(model=>model.address)
+            @*@Html.DisplayNameFor(model=>model.address)*@
+            <label>Enter address:</label>
             @Html.EditorFor(model=>model.address)
             @Html.ValidationMessageFor(model=>model.address)
         </div><br/>
         <div>
-            @Html.DisplayNameFor(model=>model.phone)
+            <label>Enter phone:</label>
             @Html.EditorFor(model=>model.phone)
             @Html.ValidationMessageFor(model=>model.phone)
         </div><br />
