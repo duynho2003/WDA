@@ -25,9 +25,36 @@ namespace Lab02.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create(Student newStudent)
         {
+            try
+            {
+                var student = db.Student.SingleOrDefault(
+                  s => s.code.Equals(newStudent.code));
+                if(ModelState.IsValid) 
+                {
+                    if (student == null)
+                    {
+                        db.Student.Add(newStudent);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        ViewBag.Msg = "Has existed...";
+                    }
+                }
+                else 
+                {
+                    ViewBag.Msg = "Fail...";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Msg = ex.Message;
+            }
             return View();
         }
     }

@@ -2,21 +2,27 @@
 @{
     ViewBag.Title = "Index";
 }
-<h1>Student List</h1>
-<table class="table">
-    <tr>
-        <th>StudentCode</th>
-        <th>StudentName</th>
-        <th>Address</th>
-        <th>PhoneNumber</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<br />
+<div>
+    @Html.ActionLink("Create new","Create","Student")
+</div>
+<div>
+    <h1>Student List</h1>
+    <table class="table">
         <tr>
-            <td>@item.code</td>
-            <td>@item.name</td>
-            <td>@item.address</td>
-            <td>@item.phone</td>
+            <th>StudentCode</th>
+            <th>StudentName</th>
+            <th>Address</th>
+            <th>PhoneNumber</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.code</td>
+                <td>@item.name</td>
+                <td>@item.address</td>
+                <td>@item.phone</td>
+            </tr>
+        }
+    </table>
+</div>

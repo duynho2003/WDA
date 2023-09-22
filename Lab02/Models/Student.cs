@@ -9,13 +9,13 @@ namespace Lab02.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string code { get; set; }
-        [Required(ErrorMessage ="Student name is required...")]
+        [Required(ErrorMessage ="Student code is required...")]
         [StringLength(50)]
         public string? name { get; set; }
-        [Required(ErrorMessage = "Student address is required...")]
+        [Required(ErrorMessage = "Student name is required...")]
         [StringLength(50)]
+        [DataType(DataType.MultilineText)]
         public string? address { get; set; }
         public string? phone { get; set; }
-
     }
 }

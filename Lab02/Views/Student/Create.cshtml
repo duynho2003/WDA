@@ -1,0 +1,37 @@
+﻿@model Lab02.Models.Student
+@{
+    ViewBag.Title = "Create";
+}
+<div>
+    <h2>Create new Student</h2>
+</div>
+<div>
+    <h3 style="color:red">@ViewBag.Msg</h3>
+</div>
+<div>
+    <form asp-action="Create" method="post">
+        <div>
+            @Html.DisplayNameFor(model=>model.code)
+            @Html.EditorFor(model=>model.code)
+            @Html.ValidationMessageFor(model=>model.code)
+        </div><br />
+        <div>
+            @Html.DisplayNameFor(model=>model.name)
+            @Html.EditorFor(model=>model.name)
+            @Html.ValidationMessageFor(model=>model.name)
+        </div><br />
+        <div>
+            @Html.DisplayNameFor(model=>model.address)
+            @Html.EditorFor(model=>model.address)
+            @Html.ValidationMessageFor(model=>model.address)
+        </div><br/>
+        <div>
+            @Html.DisplayNameFor(model=>model.phone)
+            @Html.EditorFor(model=>model.phone)
+            @Html.ValidationMessageFor(model=>model.phone)
+        </div><br />
+        <div>
+            <input type="submit" value="Create" class="btn-success"/>
+        </div>
+    </form>
+</div>
