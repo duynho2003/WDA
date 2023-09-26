@@ -27,7 +27,8 @@ namespace Lab02.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Student newStudent)
+        [ActionName("Create")]
+        public IActionResult CreateStudent(Student newStudent)
         {
             try
             {

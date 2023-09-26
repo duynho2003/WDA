@@ -1,0 +1,28 @@
+﻿@model Lab03.Models.Employee
+<div>
+        <div>
+            @Html.LabelFor(model=>model.Name)
+            @Html.EditorFor(model=>model.Name)
+            @Html.ValidationMessageFor(model=>model.Name)
+        </div><br />
+        <div>
+            @Html.LabelFor(model=>model.Gender)
+            @Html.EditorFor(model=>model.Gender)
+            @Html.ValidationMessageFor(model=>model.Gender)
+        </div><br />
+        <div>
+            @Html.LabelFor(model=>model.Email)
+            @Html.EditorFor(model=>model.Email)
+            @Html.ValidationMessageFor(model=>model.Email)
+        </div><br />
+        <div>
+            @Html.LabelFor(model=>model.Salary)
+            @Html.EditorFor(model=>model.Salary)
+            @Html.ValidationMessageFor(model=>model.Salary)
+        </div><br />
+        <div>
+            @Html.LabelFor(model=>model.Department)
+            @Html.EditorFor(model=>model.Department)
+            @Html.ValidationMessageFor(model=>model.Department)
+        </div><br /><br />
+</div>

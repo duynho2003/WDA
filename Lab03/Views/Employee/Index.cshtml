@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lab03.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "_LayoutVisitor";
+}
+@Html.ActionLink("Create new","Create","Employee")
+<form asp-action="Index" asp-controller="Employee" method="get">
+    <input type="text" name="ename" placeholder="Enter any character.../" />
+    <input type="submit" value="Search" class="btn-info"/>
+</form>
+<h1>List of Employees</h1>
+<table class="table">
+    <tr>
+        <th>#Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Gender</td>
+            <td>@item.Email</td>
+            <td>@item.Salary</td>
+            <td>@item.Department</td>
+            <td>
+                @Html.ActionLink("Update","Edit","Employee", new {id=item.Id})
+            </td>
+        </tr>
+    }
+</table>

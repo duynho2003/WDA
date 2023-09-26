@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "_LayoutVisitor";
+}
+<h2>Create a Employee</h2>
+<div>
+    <form asp-action="Create" asp-controller="Employee" method="post">
+        <partial name="_pvCreateEdit"></>
+        <br/><br/>
+        <div>
+            <input type="submit" value="Create" class="btn-success" />
+        </div>
+    </form>
+</div>
