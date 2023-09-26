@@ -6,7 +6,7 @@ namespace Lab03.Repository
     {
         List<Employee> GetEmployees();
         List<Employee> GetEmployees(string name);
-        void DeleteEmployee(Employee employee);
+        void DeleteEmployee(int id);
         Employee GetEmployeeById(int id);
         void saveEmployee(Employee employee);
         void updateEmployee(Employee employee);

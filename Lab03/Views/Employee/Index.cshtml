@@ -30,6 +30,7 @@
             <td>@item.Department</td>
             <td>
                 @Html.ActionLink("Update","Edit","Employee", new {id=item.Id})
+                @Html.ActionLink("Delete","Delete", "Employee", new {id = item.Id})
             </td>
         </tr>
     }

@@ -7,7 +7,7 @@ namespace Lab03.Models
     public class Employee
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //tu dong tang
         public int Id { get; set; }
         [Required(ErrorMessage ="Employee name is required...")]
         [StringLength(60,MinimumLength =2,

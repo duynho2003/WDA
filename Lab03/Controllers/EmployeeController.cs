@@ -1,24 +1,35 @@
 ﻿using Lab03.Models;
 using Lab03.Repository;
+using Lab03.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Lab03.Controllers
 {
     public class EmployeeController : Controller
     {
         private EmployeeServices _service;
-        public EmployeeController(EmployeeServices service) {
+        public EmployeeController(EmployeeServices service)
+        {
             _service = service;
         }
 
         [HttpGet]
-
         public IActionResult Index(string ename)
         {
-            var model = _service.GetEmployees();
-            return View(model);
-        }
+            if (ename.IsNullOrEmpty())
+            {
+                var model = _service.GetEmployees();
+                return View(model);
+            }
+            else
+            {
+                var model = _service.GetEmployees(ename);
+                return View(model);
 
+            }
+
+        }
         [HttpGet]
         public IActionResult Create()
         {
@@ -27,7 +38,7 @@ namespace Lab03.Controllers
 
         [HttpPost]
         [ActionName("Create")]
-        public IActionResult CreateEmployee(Employee employee) 
+        public IActionResult CreateEmployee(Employee employee)
         {
             try
             {
@@ -36,12 +47,13 @@ namespace Lab03.Controllers
                     _service.saveEmployee(employee);
                     return RedirectToAction("Index");
                 }
-                else 
+                else
                 {
                     ModelState.AddModelError(string.Empty, "Fail");
                 }
+
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
@@ -49,10 +61,10 @@ namespace Lab03.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit (int id)
+        public IActionResult Edit(int id)
         {
             var model = _service.GetEmployeeById(id);
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -69,12 +81,21 @@ namespace Lab03.Controllers
                 {
                     ModelState.AddModelError(string.Empty, "Fail");
                 }
+
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             return View();
+        }
+
+        //delete 
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            _service.DeleteEmployee(Id);
+            return RedirectToAction("Index");
         }
     }
 }

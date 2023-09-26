@@ -1,5 +1,6 @@
 ﻿using Lab03.Models;
 using Lab03.Repository;
+
 namespace Lab03.Services
 {
     public class EmployeeServicesImp : EmployeeServices
@@ -9,24 +10,20 @@ namespace Lab03.Services
         {
             _db = db;
         }
-        public void DeleteEmployee(Employee employee)
+        public void DeleteEmployee(int Id)
         {
-            var emp=_db.Employee.SingleOrDefault(e=>e.Id.Equals(employee.Id));
-            if (emp!=null)
+            var emp = _db.Employee.SingleOrDefault(emp => emp.Id == Id);
+            if (emp != null)
             {
                 _db.Employee.Remove(emp);
                 _db.SaveChanges();
-            }
-            else
-            {
-                //nothing
             }
         }
 
         public Employee GetEmployeeById(int id)
         {
-            var employee = _db.Employee.SingleOrDefault(e => e.Id.Equals(id));
-            if (employee!=null)
+            var employee = _db.Employee.SingleOrDefault(employee => employee.Id == id);
+            if (employee != null)
             {
                 return employee;
             }
@@ -47,8 +44,8 @@ namespace Lab03.Services
             if (name.Equals(""))
             {
                 return list;
-            }    
-            else 
+            }
+            else
             {
                 list = list.Where(e => e.Name!.Contains(name)).ToList();
                 return list;
@@ -64,11 +61,12 @@ namespace Lab03.Services
         public void updateEmployee(Employee employee)
         {
             var emp = _db.Employee.SingleOrDefault(e => e.Id.Equals(employee.Id));
-            if (emp!= null) 
-            { 
+            if (emp != null)
+            {
                 emp.Salary = employee.Salary;
                 _db.SaveChanges();
             }
+
         }
     }
 }
