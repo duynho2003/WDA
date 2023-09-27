@@ -7,8 +7,6 @@ namespace Lab04.Areas.Departments.Models
     [Table("tbDepartment")]
     public class Department
     {
-        internal object Department;
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int No { get; set; }

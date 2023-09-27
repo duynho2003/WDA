@@ -1,5 +1,10 @@
+using Lab04.Areas.Departments.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DatabaseContext>(
+    options=>options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectDB")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
