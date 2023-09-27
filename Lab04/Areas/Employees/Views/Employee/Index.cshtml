@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Lab04.Areas.Employees.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+<p><a asp-action="Create">Create new</a></p>
+<h1>List of Employees</h1>
+<div>
+    <form asp-area="Employees" asp-controller="Employee" asp-action="Index" method="get">
+        <select name="no" asp-items="ViewBag.no">
+            <option value="">---All---</option>
+        </select>
+        <input type="submit" value="Filter" class="btn-info"/>
+    </form>
+</div>
+<table class="table">
+    <tr>
+        <th>#Code</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>JoinDate</th>
+        <th>Salary</th>
+        <th>Department</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Phone</td>
+            <td>@item.JoinDate</td>
+            <td>@item.Salary</td>
+            <td>@item.Department!.Name</td>
+        </tr>
+    }
+</table>

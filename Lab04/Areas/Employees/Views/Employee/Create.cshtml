@@ -1,0 +1,46 @@
+﻿@model Lab04.Areas.Employees.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+<h2>Create new Employee</h2>
+<h3>
+    @TempData["Msg"]
+</h3>
+<form asp-area="Employees" asp-controller="Employee" asp-action="Create" method="post">
+<div class="form-control">
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.Id)
+        @Html.EditorFor(model=>model.Id)
+        @Html.ValidationMessageFor(model=>model.Id)
+        </div><br />
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.Name)
+        @Html.EditorFor(model=>model.Name)
+        @Html.ValidationMessageFor(model=>model.Name)
+        </div><br />
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.Phone)
+        @Html.EditorFor(model=>model.Phone)
+        @Html.ValidationMessageFor(model=>model.Phone)
+        </div><br />
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.JoinDate)
+        @Html.EditorFor(model=>model.JoinDate)
+        @Html.ValidationMessageFor(model=>model.JoinDate)
+        </div><br />
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.Salary)
+        @Html.EditorFor(model=>model.Salary)
+        @Html.ValidationMessageFor(model=>model.Salary)
+        </div><br />
+    <div class="form-group">
+        @Html.DisplayNameFor(model=>model.Department!.Name)
+        <select name="no" asp-items="ViewBag.no">
+            <option value="">---All---</option>
+        </select>
+    </div><br/>
+    <div>
+        <input type="submit" value="Create" class="btn-primary" />
+    </div>
+</div>
+</form>

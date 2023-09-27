@@ -21,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Departments\Views\" />
     <Folder Include="Areas\Employees\Data\" />
-    <Folder Include="Areas\Employees\Views\" />
   </ItemGroup>
 
 </Project>
