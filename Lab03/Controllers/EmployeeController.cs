@@ -20,16 +20,19 @@ namespace Lab03.Controllers
             if (ename.IsNullOrEmpty())
             {
                 var model = _service.GetEmployees();
+                ViewBag.data = model;
+                //TempData.data = model;
                 return View(model);
             }
             else
             {
                 var model = _service.GetEmployees(ename);
+                ViewBag.data = model;
                 return View(model);
 
             }
-
         }
+
         [HttpGet]
         public IActionResult Create()
         {
