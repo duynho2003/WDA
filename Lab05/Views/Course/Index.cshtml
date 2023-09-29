@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Lab05.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Course List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form>
+    <input type="text" name="min" id="min" />
+    <input type="text" name="max" id="max" />
+    <input type="submit" value="Search" class="btn-info"/>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.code)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.photo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.code">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.code">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.code">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
