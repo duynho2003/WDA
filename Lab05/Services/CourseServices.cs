@@ -27,7 +27,7 @@ namespace Lab05.Services
         public Course findOne(string code)
         {
             //return _db.Course.FirstOrDefault(c => c.code!.Equals(code));
-            return _db.Course.Find(code);
+            return _db.Course.Find(code)!;
         }
 
         public void saveCourse(Course course)

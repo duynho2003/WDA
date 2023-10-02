@@ -9,7 +9,7 @@ namespace Lab05.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string ConnectDB = "LAPTOP-PH1AFEK8\\SQLEXPRESS;database=SchoolDB;uid=sa;pwd=123;TrustServerCertificate=true";
+            string ConnectDB = "server=LAPTOP-PH1AFEK8\\SQLEXPRESS;database=SchoolDB;uid=sa;pwd=123;TrustServerCertificate=true";
             optionsBuilder.UseSqlServer(ConnectDB);
         }
 
