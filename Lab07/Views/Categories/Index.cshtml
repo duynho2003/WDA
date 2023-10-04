@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Lab07.Models.Categories>
+@{
+    ViewBag.Title = "Index";
+}
+<div>
+    <p>
+        <a asp-action="Create" asp-controller="Categories">Create new</a>
+    </p>
+    <h1>Categories List</h1>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>#ID</th>
+            <th>CategoryName</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </table>
+</div>

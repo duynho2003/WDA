@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Lab07.Models.Products>
+@{
+    ViewBag.Title = "Index";
+}
+<div>
+    <p>
+        <a asp-action="Create" asp-controller="Products">Create new</a>
+    </p>
+    <h1>Product List</h1>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>#ID</th>
+            <th>ProductName</th>
+            <th>CategoryID</th>
+            <th>Unit</th>
+            <th>Price</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryID</td>
+                <td>@item.Unit</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+    </table>
+</div>
