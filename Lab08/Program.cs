@@ -3,7 +3,7 @@ using Lab08.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<SaleDbContext>();
-
+builder.Services.AddAutoMapper(typeof(Program));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

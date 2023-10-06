@@ -1,8 +1,54 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Lab08.Models.CustomersOrders>
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                OrderDate
+            </th>
+            <th>
+                ProductName
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Customer
+            </th>
+            @* <th>
+                PriceOrder
+            </th> *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Order!.OrderDate
+                </td>
+                <td>
+                    @item.Order!.ProductName
+                </td>
+                <td>
+                    @item.Order!.Price
+                </td>
+                <td>
+                    @item.Order!.Customer
+                </td>
+                <td>
+                    @* @(item.Order!.Price * item.Order!.Quantity) *@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
