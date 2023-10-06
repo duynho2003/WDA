@@ -1,4 +1,8 @@
+using Lab08.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SaleDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
