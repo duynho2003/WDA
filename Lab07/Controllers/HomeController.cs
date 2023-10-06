@@ -6,16 +6,23 @@ namespace Lab07.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
+        private DatabaseContext _db;
+        public HomeController(DatabaseContext db) 
+        { 
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model = from c in _db.Categories 
+                        join p in _db.Products 
+                        on c.CategoryID equals p.CategoryID
+                        select new CategoriesProducts
+                        {
+                            Categories = c,
+                            Products = p
+                        };
+            return View(model);
         }
 
         public IActionResult Privacy()

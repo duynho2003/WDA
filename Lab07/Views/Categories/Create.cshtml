@@ -1,0 +1,23 @@
+﻿@model Lab07.Models.Categories
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <div>
+        <h2>Create new Category</h2>
+    </div>
+    <form asp-action="Create" method="post">
+    <div>
+        @Html.LabelFor(model=>model.CategoryName)
+        @Html.EditorFor(model=>model.CategoryName)
+        @Html.ValidationMessageFor(model=>model.CategoryName)
+    </div><div>
+        @Html.LabelFor(model=>model.Description)
+        @Html.EditorFor(model=>model.Description)
+        @Html.ValidationMessageFor(model=>model.Description)
+    </div><br />
+        <div>
+            <input type="submit" value="Create" class="btn-success"/>
+        </div>
+    </form>
+</div></>
