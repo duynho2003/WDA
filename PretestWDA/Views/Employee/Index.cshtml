@@ -15,7 +15,6 @@
         <th>Email</th>
         <th>Action</th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
@@ -25,8 +24,14 @@
             <td>@item.EmpAddress</td>
             <td>@item.EmpEmail</td>
             <td>
-                @Html.ActionLink("UpdateOrDelete","EditOrDelete",new {id=item.EmpId})
+                <input type="checkbox" />
+                @* @Html.ActionLink("UpdateOrDelete","EditOrDelete",new {id=item.EmpId}) *@
             </td>
         </tr>
     }
+    <tr>
+        <td colspan="5" align="right">
+            <input type="submit" value="Delete" />
+        </td>
+    </tr>
 </table>
