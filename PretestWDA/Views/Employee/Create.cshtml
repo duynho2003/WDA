@@ -1,0 +1,40 @@
+﻿@model PretestWDA.Models.TbEmployee
+@{
+    ViewBag.Title = "create";
+}
+<div>
+    <h1>Create new Employee</h1>
+</div>
+<div>
+    <form asp-action="Create" method="post">
+    <div>
+        @Html.LabelFor(model=>model.EmpId)
+        @Html.EditorFor(model=>model.EmpId)
+        @Html.ValidationMessageFor(model=>model.EmpId)
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.EmpDob)
+        @Html.EditorFor(model=>model.EmpDob)
+        @Html.ValidationMessageFor(model=>model.EmpDob)
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.EmpName)
+        @Html.EditorFor(model=>model.EmpName)
+        @Html.ValidationMessageFor(model=>model.EmpName)
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.EmpAddress)
+        @Html.EditorFor(model=>model.EmpAddress)
+        @Html.ValidationMessageFor(model=>model.EmpAddress)
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.EmpEmail)
+        @Html.EditorFor(model=>model.EmpEmail)
+        @Html.ValidationMessageFor(model=>model.EmpEmail)
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Create" class="btn-primary"/>
+    </div>
+    </form>
+</div>

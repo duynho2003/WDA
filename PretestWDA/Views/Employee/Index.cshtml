@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PretestWDA.Models.TbEmployee>
+@{
+    ViewBag.Title = "Index";
+}
+<h3>
+    <a asp-action="Create">Create new</a>
+</h3>
+<h1>Employee List</h1>
+<table class="table">
+    <tr>
+        <th>#ID</th>
+        <th>Dob</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpDob</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpAddress</td>
+            <td>@item.EmpEmail</td>
+            <td>
+                @Html.ActionLink("UpdateOrDelete","EditOrDelete",new {id=item.EmpId})
+            </td>
+        </tr>
+    }
+</table>

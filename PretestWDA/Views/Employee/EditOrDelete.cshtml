@@ -1,0 +1,46 @@
+﻿@model PretestWDA.Models.TbEmployee
+@{
+    ViewBag.Title = "create";
+}
+<div>
+    <h1>Update or Delete Employee?</h1>
+</div>
+<div>
+    <form asp-action="EditOrDelete" method="post">
+        <div>
+            @Html.LabelFor(model=>model.EmpId)
+            <input asp-for="EmpId" readonly= "readonly" />
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EmpDob)
+            @Html.EditorFor(model=>model.EmpDob)
+            @Html.ValidationMessageFor(model=>model.EmpDob)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EmpName)
+            @Html.EditorFor(model=>model.EmpName)
+            @Html.ValidationMessageFor(model=>model.EmpName)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EmpAddress)
+            @Html.EditorFor(model=>model.EmpAddress)
+            @Html.ValidationMessageFor(model=>model.EmpAddress)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EmpEmail)
+            @Html.EditorFor(model=>model.EmpEmail)
+            @Html.ValidationMessageFor(model=>model.EmpEmail)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Update" name="submits" class="btn-warning"
+                   onclick="return confirm('Are you sure to update?')" />
+            <input type="submit" value="Delete" name="submits" class="btn-danger" 
+                   onclick="return confirm('Are you sure to Delete?')"/>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
