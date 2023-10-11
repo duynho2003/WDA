@@ -10,7 +10,7 @@ namespace Lab03.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string str = "server=LAPTOP-PH1AFEK8\\SQLEXPRESS;database=EmployeeDB;Trusted_Connection=true;TrustServerCertificate=true";
+            string str = "server=LAPTOP-PH1AFEK8\\SQLEXPRESS;database=EmployeeDB;uid=sa;pwd=123;TrustServerCertificate=true";
             optionsBuilder.UseSqlServer(str);
         }
     }
