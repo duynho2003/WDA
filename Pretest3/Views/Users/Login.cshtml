@@ -1,0 +1,24 @@
+﻿@model Pretest3.Models.TbUser
+@{
+    ViewBag.Title = "Login";
+}
+
+<h1>Login</h1>
+<h4 class="text-danger">@ViewBag.Msg</h4>
+<form asp-action="Login" method="post">
+    <div>
+        @Html.LabelFor(model => model.UserId)
+        @Html.EditorFor(model => model.UserId)
+        @Html.ValidationMessageFor(model => model.UserId)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.PassWord)
+        @Html.EditorFor(model => model.PassWord)
+        @Html.ValidationMessageFor(model => model.PassWord)
+    </div><br/>
+    <div>
+        <input type="submit" value="Submit" class="btn-primary"/>
+        <input type="reset" value="Reset" class="btn-info"/>
+    </div>
+</form>
+
