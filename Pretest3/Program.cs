@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<UserDbContext>();
 builder.Services.AddScoped<UsersRepository, UsersServices>();
-builder.Services.AddSession();
+builder.Services.AddSession(); //khai bao session
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -19,7 +19,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
-app.UseSession();
+app.UseSession(); //su dung session
 app.UseRouting();
 
 app.UseAuthorization();
