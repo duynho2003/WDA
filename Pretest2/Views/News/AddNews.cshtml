@@ -1,0 +1,32 @@
+﻿@model Pretext2.Models.News
+@{
+    ViewBag.Title = "AddNews";
+}
+
+<h1>Add News</h1>
+
+<div>
+    <form asp-action="AddNews">
+        @*<div>
+            @Html.LabelFor(model => model.NewsId)
+            @Html.EditorFor(model => model.NewsId) 
+            @Html.ValidationMessageFor(model => model.NewsId)
+        </div>*@
+        <div>
+            @Html.LabelFor(model => model.HeadLines)
+            @Html.EditorFor(model => model.HeadLines)
+            @Html.ValidationMessageFor(model => model.HeadLines)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ContentOfNews)
+            @Html.EditorFor(model => model.ContentOfNews)
+            @Html.ValidationMessageFor(model => model.ContentOfNews)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Submit" />
+            
+        </div>
+    </form>
+    <a asp-action="Admin" >Back</a>
+</div>

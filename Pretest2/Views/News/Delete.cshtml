@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Pretext2.Models.News>
+@{
+    ViewBag.Title = "Delete News";
+}
+
+<h1 style="color:blue">Delete News</h1>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>NewsID</th>
+            <th>HeadLines</th>
+            <th>ContentOfNews</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NewsId</td>
+                <td>@item.HeadLines</td>
+                <td>@item.ContentOfNews</td>
+                <td><a asp-route-id="@item.NewsId">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <a asp-action="Admin">Back</a>
+</div>

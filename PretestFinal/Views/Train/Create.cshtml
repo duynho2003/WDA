@@ -1,0 +1,58 @@
+﻿@model PretestFinal.Models.ProfileTrainerViewModel
+@{
+    ViewBag.Title = "Create";
+}
+<h1>INSERT NEW TRAINER</h1>
+<div>
+<form asp-action="Create" method="post">
+    <div>
+    @Html.LabelFor(model=>model.Profile.Fullname)
+    @Html.EditorFor(model=>model.Profile.Fullname)
+    @Html.ValidationMessageFor(model=>model.Profile.Fullname)
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Trainer.Username)
+        @Html.EditorFor(model=>model.Trainer.Username) 
+        @Html.ValidationMessageFor(model=>model.Profile.Username)
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Trainer.Password)
+        @Html.EditorFor(model=>model.Trainer.Password)
+        @Html.ValidationMessageFor(model=>model.Trainer.Password)
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Profile.Birthday)
+        @Html.EditorFor(model=>model.Profile.Birthday)
+        @Html.ValidationMessageFor(model=>model.Profile.Birthday)
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Profile.Sex)
+        @Html.DropDownListFor(model => model.Profile.Sex, Model.Sex, "Select Sex")
+
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Profile.Placeofbirth)
+        @Html.EditorFor(model=>model.Profile.Placeofbirth)
+        @Html.ValidationMessageFor(model=>model.Profile.Placeofbirth)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Trainer.Roles)
+        @Html.DropDownListFor(model => model.Trainer.Roles, Model.Roles, "Select Role")
+    </div>
+
+
+    <div>
+        @Html.LabelFor(model=>model.Profile.Skills)
+        @Html.EditorFor(model=>model.Profile.Skills)
+        @Html.ValidationMessageFor(model=>model.Profile.Skills)
+    </div>
+
+    <input type="submit" value="Insert"/>
+</form>
+</div>

@@ -84,20 +84,26 @@ namespace Pretest3.Controllers
                         ViewBag.Msg = "Invalid UserId and PassWord";
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Fali!");
-                }
-                return View();
             }
             catch (Exception ex)
             {
                 ViewBag.Msg = ex.Message;
-
-                throw;
+            }
+            return View();
+        }
+        public IActionResult Logout()
+        {
+            var session = HttpContext.Session.GetString("userId");
+            if (session != null)
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("Login");
+            }
+            else 
+            {
+                return RedirectToAction("Login");
             }
         }
-
         [HttpGet]
         public IActionResult Details(string UserId)
         {

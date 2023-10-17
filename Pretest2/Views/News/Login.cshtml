@@ -1,0 +1,30 @@
+﻿@model Pretext2.Models.Infos
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<h5 class="text-danger">@ViewBag.Msg</h5>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Login">
+
+            @Html.LabelFor(model => model.UserName)
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+            <br /><br />
+            @Html.LabelFor(model => model.Password)
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="reset" value="Reset"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+

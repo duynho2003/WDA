@@ -1,0 +1,26 @@
+﻿@model PretestFinal.Models.TbTrainer;
+<h1>
+    Detail Information
+</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>fullName</th>
+            <th>Sex</th>
+            <th>dateOfBirth</th>
+            <th>placeOfBirth</th>
+            <th>Skills</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var profile in Model.TbProfiles){
+        <tr>
+                <td>@profile.Fullname</td>
+                <td>@profile.Sex</td>
+                <td>@profile.Birthday</td>
+                <td>@profile.Placeofbirth</td>
+                <td>@profile.Skills</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Pretext2.Models.News>
+@{
+    ViewBag.Title = "Show All News";
+}
+
+<h1 style ="color:blue">Show All News</h1>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>NewsID</th>
+            <th>HeadLines</th>
+            <th>ContentOfNews</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NewsId</td>
+                <td>@item.HeadLines</td>
+                <td>@item.ContentOfNews</td>
+            </tr>
+        }
+    </table>
+    <a asp-action="Admin">Back</a>
+</div>

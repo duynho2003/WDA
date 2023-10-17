@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PretestFinal.Models.TbProfile>
+<h1>
+    Employee Information 
+</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>fullName</th>
+            <th>Sex</th>
+            <th>dateOfBirth</th>
+            <th>placeOfBirth</th>
+            <th>Skills</th>
+            <th>username</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Fullname</td>
+                <td>@item.Sex</td>
+                <td>@item.Birthday</td>
+                <td>@item.Placeofbirth</td>
+                <td>@item.Skills</td>
+                <td>@item.Username</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>
+    @Html.ActionLink("Insert New Trainer", "Create", "Train")
+</h3>
