@@ -1,0 +1,30 @@
+﻿@model Pretest1.Models.Employee
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Welcom To Employees Section</h1>
+
+<h4>Enter The Login Detail To Check The Infomation</h4>
+<h5 class="text-danger">@ViewBag.Msg</h5>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+
+            @Html.LabelFor(model => model.EmpID)
+            @Html.EditorFor(model => model.EmpID)
+            @Html.ValidationMessageFor(model => model.EmpID)
+            <br /><br />
+            @Html.LabelFor(model => model.EmpPass)
+            @Html.EditorFor(model => model.EmpPass)
+            @Html.ValidationMessageFor(model => model.EmpPass)
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

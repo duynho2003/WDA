@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Pretest1.Models.TaskSheet>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="display : flex">
+    <h2>
+        Welcome @if (ViewBag.Name != null)
+        {
+            <span style="color:red">@ViewBag.Name</span>
+        }
+    </h2>[<a asp-action="Logout" asp-controller="Task">Logout</a>]
+</div>
+<div style="display : flex">
+    <p>This is your detail Task Sheet.</p>
+    <a asp-action="Create" asp-controller="Task">[New Task]</a>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Task ID</th>
+        <th>Task Name</th>
+        <th>Start Time</th>
+        <th>Finish Time</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TaskID</td>
+            <td>@item.TaskName</td>
+            <td>@item.StartTime</td>
+            <td>@item.FinishTime</td>
+            <td><a asp-action="Delete" asp-route-id="@item.TaskID">Delete</a></td>
+        </tr>
+    }
+</table>
+
