@@ -1,5 +1,8 @@
+using Student1408049.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ProjectDbContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -18,6 +21,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Project}/{action=Index}/{id?}");
 
 app.Run();
