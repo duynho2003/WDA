@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Student1408049.Models.TbProject>
+@{
+    ViewBag.Title = "Index";
+}
+<h3>
+    <a asp-action="Create">Create New</a>
+</h3>
+<table class="table">
+    <tr>
+        <th>ClientName</th>
+        <th>ProjectName</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>Cost</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.ProjectName</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+            <td>@item.Cost</td>
+            <td>
+                @Html.ActionLink("ViewDetails","UpdateOrRemove",new {id=item.Id})
+            </td>
+        </tr>
+    }
+</table>

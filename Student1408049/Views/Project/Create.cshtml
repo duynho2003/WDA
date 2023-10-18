@@ -1,0 +1,40 @@
+﻿@model Student1408049.Models.TbProject
+@{
+    ViewBag.Title = "create";
+}
+<div>
+    <h1>Create new Project</h1>
+</div>
+<div>
+    <form asp-action="Create" method="post">
+        <div>
+            @Html.LabelFor(model=>model.ClientName)
+            @Html.EditorFor(model=>model.ClientName)
+            @Html.ValidationMessageFor(model=>model.ClientName)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.ProjectName)
+            @Html.EditorFor(model=>model.ProjectName)
+            @Html.ValidationMessageFor(model=>model.ProjectName)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.StartDate)
+            @Html.EditorFor(model=>model.StartDate)
+            @Html.ValidationMessageFor(model=>model.StartDate)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EndDate)
+            @Html.EditorFor(model=>model.EndDate)
+            @Html.ValidationMessageFor(model=>model.EndDate)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.Cost)
+            @Html.EditorFor(model=>model.Cost)
+            @Html.ValidationMessageFor(model=>model.Cost)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Create" class="btn-primary" />
+        </div>
+    </form>
+</div>

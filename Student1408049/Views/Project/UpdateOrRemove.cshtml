@@ -1,0 +1,50 @@
+﻿@model Student1408049.Models.TbProject
+@{
+    ViewBag.Title = "Update or Delete";
+}
+<div>
+    <h1>Update or Delete Employee?</h1>
+</div>
+<div>
+    <form asp-action="UpdateOrRemove" method="post">
+        <div>
+            @Html.LabelFor(model=>model.Id)
+            <input asp-for="Id" readonly="readonly" />
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.ClientName)
+            @Html.EditorFor(model=>model.ClientName)
+            @Html.ValidationMessageFor(model=>model.ClientName)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.ProjectName)
+            @Html.EditorFor(model=>model.ProjectName)
+            @Html.ValidationMessageFor(model=>model.ProjectName)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.StartDate)
+            @Html.EditorFor(model=>model.StartDate)
+            @Html.ValidationMessageFor(model=>model.StartDate)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.EndDate)
+            @Html.EditorFor(model=>model.EndDate)
+            @Html.ValidationMessageFor(model=>model.EndDate)
+        </div><div>
+            @Html.LabelFor(model=>model.Cost)
+            @Html.EditorFor(model=>model.Cost)
+            @Html.ValidationMessageFor(model=>model.Cost)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Update" name="submits" class="btn-warning"
+                   onclick="return confirm('Are you sure to update?')" />
+            <input type="submit" value="Delete" name="submits" class="btn-danger"
+                   onclick="return confirm('Are you sure to Delete?')" />
+        </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+
