@@ -1,0 +1,17 @@
+CREATE DATABASE TaskManager
+-----
+USE TaskManager
+-----
+CREATE TABLE Employee (
+    EmpID VARCHAR(10) PRIMARY KEY,
+    EmpName VARCHAR(20) NOT NULL,
+    EmpPass VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE TaskSheet (
+    TaskID INT IDENTITY(1,1) PRIMARY KEY,
+    EmpID VARCHAR(10) NOT NULL,
+    TaskName VARCHAR(50) NOT NULL,
+    StartTime DATETIME,
+    FinishTime DATETIME
+);
